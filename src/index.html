@@ -5,13 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>главная</title>
   </head>
-  <body>
-    <h1>главная</h1>
+  <body class="index">
+    <header class="header">
+      <a href="#header" class="header__logo">
+        <svg class="logo__icon" viewBox="0 0 200 200">
+          <g>
+            <ellipse cx="100" cy="52" rx="24" ry="46"></ellipse>
+            <ellipse
+              cx="100"
+              cy="52"
+              rx="24"
+              ry="46"
+              transform="rotate(72 100 100)"
+            ></ellipse>
+            <ellipse
+              cx="100"
+              cy="52"
+              rx="24"
+              ry="46"
+              transform="rotate(144 100 100)"
+            ></ellipse>
+            <ellipse
+              cx="100"
+              cy="52"
+              rx="24"
+              ry="46"
+              transform="rotate(216 100 100)"
+            ></ellipse>
+            <ellipse
+              cx="100"
+              cy="52"
+              rx="24"
+              ry="46"
+              transform="rotate(288 100 100)"
+            ></ellipse>
+          </g>
+        </svg>
+        <span class="logo__text">цветочный</span>
+      </a>
+      <nav class="header__nav">
+        <a href="#about" class="nav__link">о проекте</a>
+        <a href="#articles" class="nav__link">статьи</a>
+        <a href="#form" class="nav__link">форма</a>
+      </nav>
+    </header>
+
+    <section class="form section theme theme--pink">
+      <div class="section__head">
+        <p class="reveal section__label">на связи</p>
+        <p class="reveal section__note">без спама, только письмо о запуске</p>
+      </div>
+      <div class="form__grid">
+        <div class="form__inro">
+          <h2>оставайтесь на связи</h2>
+          <p class="form__text reveal">напишите нам - пришлем письмо</p>
+        </div>
+      </div>
+    </section>
+    <div data-fs-success>Thanks for your submission!</div>
+    <div data-fs-error>Oops! There was a problem submitting your form.</div>
+    <form id="my-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" data-fs-field />
+      <span data-fs-error="email"></span>
+      <label for="message">Message:</label>
+      <input type="text" id="message" name="message" data-fs-field />
+      <span data-fs-error="message"></span>
+      <button type="submit" data-fs-submit-btn>Submit</button>
+    </form>
+
+    <!-- Place these scripts at the end of the body tag -->
+    <script>
+      window.formspree =
+        window.formspree ||
+        function () {
+          (formspree.q = formspree.q || []).push(arguments);
+        };
+      formspree("initForm", {
+        formElement: "#my-form",
+        formId: "mdekylvy",
+      });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <!-- <h1>главная</h1>
     <h2>разделы</h2>
     <ul>
       <li><a href="pages/articles.html">статьи</a></li>
       <li><a href="pages/dictionary.html">словарь</a></li>
       <li><a href="pages/tests.html">тесты</a></li>
-    </ul>
+    </ul> -->
   </body>
 </html>
